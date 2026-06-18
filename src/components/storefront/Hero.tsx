@@ -1,4 +1,3 @@
-import logo from "@/assets/logo.avif.asset.json";
 import heroImage from "@/assets/hero.jpg";
 
 export function Hero() {
@@ -15,14 +14,20 @@ export function Hero() {
         height={1080}
         className="absolute inset-0 h-full w-full animate-slow-zoom object-cover"
       />
-      <div className="absolute inset-0 bg-ink/25" />
+      <div className="absolute inset-0 bg-gradient-to-b from-ink/40 via-ink/20 to-ink/50" />
 
-      {/* Centered logo mark */}
-      <img
-        src={logo.url}
-        alt="Deepstrike"
-        className="relative w-[clamp(220px,42vw,560px)] select-none opacity-95 drop-shadow-[0_2px_24px_rgba(0,0,0,0.4)]"
-      />
+      {/* Editorial transparent headline */}
+      <div className="relative flex flex-col items-center px-6 text-center">
+        <span className="eyebrow mb-6 text-[0.78rem] tracking-[0.32em] text-paper/70">
+          Autumn / Winter 2026
+        </span>
+        <h1 className="font-display text-[clamp(3rem,12vw,9.5rem)] font-semibold leading-[0.92] text-paper/15 mix-blend-overlay [text-shadow:0_2px_40px_rgba(0,0,0,0.25)]">
+          DEEPSTRIKE
+        </h1>
+        <p className="mt-6 max-w-md text-[0.95rem] leading-relaxed text-paper/75">
+          Technical apparel engineered for movement. Built quiet, worn loud.
+        </p>
+      </div>
 
       {/* Frosted glass pill CTAs */}
       <div className="absolute bottom-16 left-1/2 flex -translate-x-1/2 flex-wrap items-center justify-center gap-3">

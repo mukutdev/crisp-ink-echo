@@ -1,29 +1,51 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { CartProvider } from "@/context/CartContext";
+import { AnnouncementBar } from "@/components/storefront/AnnouncementBar";
+import { Navbar } from "@/components/storefront/Navbar";
+import { Hero } from "@/components/storefront/Hero";
+import { BestSellers } from "@/components/storefront/BestSellers";
+import { CategoryTiles } from "@/components/storefront/CategoryTiles";
+import { BrandStory } from "@/components/storefront/BrandStory";
+import { MarqueeRow } from "@/components/storefront/MarqueeRow";
+import { Newsletter } from "@/components/storefront/Newsletter";
+import { TrustBadges } from "@/components/storefront/TrustBadges";
+import { Footer } from "@/components/storefront/Footer";
 
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Your App" },
-      { name: "description", content: "Replace this with a one-sentence description of your app." },
-      { property: "og:title", content: "Your App" },
-      { property: "og:description", content: "Replace this with a one-sentence description of your app." },
+      { title: "Deepstrike — Technical Apparel, Engineered to Last" },
+      {
+        name: "description",
+        content:
+          "Considered technical apparel in a quiet monochrome palette. Shop outerwear, tops, and bottoms engineered for the elements.",
+      },
+      { property: "og:title", content: "Deepstrike — Technical Apparel" },
+      {
+        property: "og:description",
+        content:
+          "Considered technical apparel in a quiet monochrome palette, engineered to outlast the season.",
+      },
     ],
   }),
   component: Index,
 });
 
-// IMPORTANT: Replace this placeholder. See ./README.md for routing conventions.
 function Index() {
   return (
-    <div
-      className="flex min-h-screen items-center justify-center"
-      style={{ backgroundColor: "#fcfbf8" }}
-    >
-      <img
-        data-lovable-blank-page-placeholder="REMOVE_THIS"
-        src="https://cdn.gpteng.co/blank-app-v1.svg"
-        alt="Your app will live here!"
-      />
-    </div>
+    <CartProvider>
+      <AnnouncementBar />
+      <Navbar />
+      <main>
+        <Hero />
+        <BestSellers />
+        <CategoryTiles />
+        <BrandStory />
+        <MarqueeRow />
+        <Newsletter />
+        <TrustBadges />
+      </main>
+      <Footer />
+    </CartProvider>
   );
 }

@@ -82,7 +82,7 @@ export const products: Product[] = [
     name: "Sealed Mac Coat",
     price: 510,
     category: "outerwear",
-    isNew: false,
+    isNew: true,
     tone: "oklch(0.5 0.004 90)",
     hoverTone: "oklch(0.72 0.004 90)",
     swatches: [
@@ -95,7 +95,7 @@ export const products: Product[] = [
     name: "Boxy Pocket Tee",
     price: 95,
     category: "tops",
-    isNew: false,
+    isNew: true,
     tone: "oklch(0.9 0.004 90)",
     hoverTone: "oklch(0.55 0.004 90)",
     swatches: [
@@ -122,7 +122,7 @@ export const products: Product[] = [
     name: "Insulated Liner Vest",
     price: 195,
     category: "outerwear",
-    isNew: false,
+    isNew: true,
     tone: "oklch(0.7 0.004 90)",
     hoverTone: "oklch(0.45 0.004 90)",
     swatches: [

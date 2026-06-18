@@ -7,6 +7,7 @@ import { PlaceholderImage } from "./PlaceholderImage";
 export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
   const [added, setAdded] = useState(false);
+  const image = getProductImage(product.id);
 
   const handleAdd = () => {
     addItem();
@@ -17,16 +18,23 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group">
       <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-muted">
-        <PlaceholderImage
-          tone={product.tone}
-          label={product.name}
-          className="absolute inset-0 h-full w-full transition-opacity duration-500 group-hover:opacity-0"
-        />
-        <PlaceholderImage
-          tone={product.hoverTone}
-          label="Back view"
-          className="absolute inset-0 h-full w-full scale-[1.02] opacity-0 transition-all duration-500 group-hover:scale-100 group-hover:opacity-100"
-        />
+        {image ? (
+          <img
+            src={image}
+            alt={product.name}
+            loading="lazy"
+            width={576}
+            height={768}
+            className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
+          />
+        ) : (
+          <PlaceholderImage
+            tone={product.tone}
+            label={product.name}
+            className="absolute inset-0 h-full w-full"
+          />
+        )}
+
 
         {product.isNew && (
           <span className="absolute left-3 top-3 rounded-sm bg-paper/90 px-2 py-1 eyebrow text-[0.55rem] text-ink">

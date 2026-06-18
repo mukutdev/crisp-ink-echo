@@ -6,6 +6,7 @@ import { Hero } from "@/components/storefront/Hero";
 import { BestSellers } from "@/components/storefront/BestSellers";
 import { CategoryTiles } from "@/components/storefront/CategoryTiles";
 import { BrandStory } from "@/components/storefront/BrandStory";
+import { TeamGallery } from "@/components/storefront/TeamGallery";
 import { MarqueeRow } from "@/components/storefront/MarqueeRow";
 import { Newsletter } from "@/components/storefront/Newsletter";
 import { TrustBadges } from "@/components/storefront/TrustBadges";

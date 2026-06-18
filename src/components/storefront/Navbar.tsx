@@ -3,6 +3,7 @@ import { Search, User, ShoppingBag, Menu } from "lucide-react";
 import { useCart } from "@/context/CartContext";
 import { MobileMenu } from "./MobileMenu";
 import logoDark from "@/assets/logo-dark.png.asset.json";
+import logoLight from "@/assets/logo.avif.asset.json";
 
 const links = ["New In", "Women", "Men", "Outerwear", "About"];
 

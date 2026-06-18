@@ -32,15 +32,21 @@ export function Navbar() {
         aria-label="Primary"
       >
         <a href="#top" className="flex items-center" aria-label="Deepstrike home">
-          <img src={logoDark.url} alt="Deepstrike" className="h-4 w-auto md:h-5" />
+          <img
+            src={scrolled ? logoDark.url : logoLight.url}
+            alt="Deepstrike"
+            className="h-5 w-auto md:h-6"
+          />
         </a>
 
-        <ul className="hidden items-center justify-center gap-9 md:flex">
+        <ul className="hidden items-center justify-center gap-10 md:flex">
           {links.map((link) => (
             <li key={link}>
               <a
                 href="#best-sellers"
-                className="eyebrow text-[0.7rem] text-ink/80 transition-colors hover:text-ink"
+                className={`eyebrow text-[0.9rem] transition-colors ${
+                  scrolled ? "text-ink/80 hover:text-ink" : "text-paper/90 hover:text-paper"
+                }`}
               >
                 {link}
               </a>

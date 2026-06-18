@@ -54,7 +54,7 @@ export function Navbar() {
           ))}
         </ul>
 
-        <div className="flex items-center justify-end gap-1.5">
+        <div className={`flex items-center justify-end gap-1.5 ${scrolled ? "text-ink" : "text-paper"}`}>
           <button
             type="button"
             aria-label="Search"

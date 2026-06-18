@@ -16,7 +16,7 @@ export function Footer() {
             <img
               src={logoDark.url}
               alt="Deepstrike"
-              className="h-5 w-auto opacity-0"
+              className="h-8 w-auto opacity-0 md:h-10"
               style={{ filter: "invert(1)", opacity: 1 }}
             />
             <p className="mt-5 max-w-xs text-sm leading-relaxed text-paper/60">

@@ -28,7 +28,7 @@ export function Navbar() {
       }`}
     >
       <nav
-        className="mx-auto grid max-w-[1400px] grid-cols-[auto_1fr_auto] items-center gap-4 px-6 py-4 md:px-12"
+        className="mx-auto grid w-full grid-cols-[auto_1fr_auto] items-center gap-4 px-6 py-4 md:px-12"
         aria-label="Primary"
       >
         <a href="#top" className="flex items-center" aria-label="Deepstrike home">

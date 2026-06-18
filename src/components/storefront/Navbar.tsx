@@ -58,21 +58,21 @@ export function Navbar() {
           <button
             type="button"
             aria-label="Search"
-            className="rounded-sm p-2 text-ink transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink"
+            className="rounded-sm p-2 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink"
           >
             <Search className="h-[18px] w-[18px]" strokeWidth={1.5} />
           </button>
           <button
             type="button"
             aria-label="Account"
-            className="hidden rounded-sm p-2 text-ink transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink sm:block"
+            className="hidden rounded-sm p-2 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink sm:block"
           >
             <User className="h-[18px] w-[18px]" strokeWidth={1.5} />
           </button>
           <button
             type="button"
             aria-label={`Cart, ${count} items`}
-            className="relative rounded-sm p-2 text-ink transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink"
+            className="relative rounded-sm p-2 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink"
           >
             <ShoppingBag className="h-[18px] w-[18px]" strokeWidth={1.5} />
             {count > 0 && (
@@ -85,7 +85,7 @@ export function Navbar() {
             type="button"
             aria-label="Open menu"
             onClick={() => setMenuOpen(true)}
-            className="rounded-sm p-2 text-ink transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink md:hidden"
+            className="rounded-sm p-2 transition-opacity hover:opacity-60 focus-visible:outline focus-visible:outline-2 focus-visible:outline-ink md:hidden"
           >
             <Menu className="h-[18px] w-[18px]" strokeWidth={1.5} />
           </button>

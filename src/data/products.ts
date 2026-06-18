@@ -25,14 +25,16 @@ export interface Product {
   tone: string;
   /** tone shown on hover (second image) */
   hoverTone: string;
-  /** product photo */
-  image: string;
   swatches: Swatch[];
 }
 
 const productImages: Record<string, string> = {
   p1, p2, p3, p4, p5, p6, p7, p8,
 };
+
+export function getProductImage(id: string): string | undefined {
+  return productImages[id];
+}
 
 export const products: Product[] = [
   {

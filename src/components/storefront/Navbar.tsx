@@ -35,7 +35,7 @@ export function Navbar() {
           <img
             src={scrolled ? logoDark.url : logoLight.url}
             alt="Deepstrike"
-            className="h-5 w-auto md:h-6"
+            className="h-7 w-auto md:h-9"
           />
         </a>
 

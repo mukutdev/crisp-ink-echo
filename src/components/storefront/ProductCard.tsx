@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Plus, Check } from "lucide-react";
-import type { Product } from "@/data/products";
+import { type Product, getProductImage } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { PlaceholderImage } from "./PlaceholderImage";
 

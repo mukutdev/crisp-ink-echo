@@ -95,7 +95,7 @@ export const products: Product[] = [
     name: "Boxy Pocket Tee",
     price: 95,
     category: "tops",
-    isNew: false,
+    isNew: true,
     tone: "oklch(0.9 0.004 90)",
     hoverTone: "oklch(0.55 0.004 90)",
     swatches: [

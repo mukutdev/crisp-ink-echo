@@ -5,6 +5,8 @@ import { Navbar } from "@/components/storefront/Navbar";
 import { Hero } from "@/components/storefront/Hero";
 import { BestSellers } from "@/components/storefront/BestSellers";
 import { CategoryTiles } from "@/components/storefront/CategoryTiles";
+import { Materials } from "@/components/storefront/Materials";
+import { Reviews } from "@/components/storefront/Reviews";
 import { BrandStory } from "@/components/storefront/BrandStory";
 import { TeamGallery } from "@/components/storefront/TeamGallery";
 import { MarqueeRow } from "@/components/storefront/MarqueeRow";
@@ -40,6 +42,8 @@ function Index() {
       <main>
         <Hero />
         <BestSellers />
+        <Materials />
+        <Reviews />
         <CategoryTiles />
         <BrandStory />
         <TeamGallery />

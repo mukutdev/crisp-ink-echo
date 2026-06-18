@@ -9,7 +9,7 @@ const tiles = [
 
 export function CategoryTiles() {
   return (
-    <section className="mx-auto max-w-[1400px] px-6 pb-20 md:px-12 md:pb-28">
+    <section className="px-6 pb-20 md:px-12 md:pb-28">
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 md:gap-6">
         {tiles.map((tile, i) => (
           <Reveal key={tile.label} delay={i * 100}>

@@ -11,7 +11,7 @@ export function BestSellers() {
   return (
     <section
       id="best-sellers"
-      className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-28"
+      className="px-6 py-20 md:px-12 md:py-28"
     >
       <div className="flex flex-col gap-8 md:flex-row md:items-end md:justify-between">
         <SectionHeading eyebrow="Best Sellers" title="The current edit" />

@@ -13,7 +13,7 @@ export function Newsletter() {
   };
 
   return (
-    <section className="mx-auto max-w-[1400px] px-6 py-20 md:px-12 md:py-28">
+    <section className="px-6 py-20 md:px-12 md:py-28">
       <Reveal className="mx-auto max-w-2xl text-center">
         <p className="eyebrow text-stone">Early Access</p>
         <h2 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink sm:text-4xl">

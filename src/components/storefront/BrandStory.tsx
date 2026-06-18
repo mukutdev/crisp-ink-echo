@@ -3,7 +3,7 @@ import { Reveal } from "./Reveal";
 export function BrandStory() {
   return (
     <section id="story" className="border-y border-hairline bg-card">
-      <div className="mx-auto grid max-w-[1400px] grid-cols-1 gap-10 px-6 py-20 md:grid-cols-12 md:gap-8 md:px-12 md:py-32">
+      <div className="grid grid-cols-1 gap-10 px-6 py-20 md:grid-cols-12 md:gap-8 md:px-12 md:py-32">
         <Reveal className="md:col-span-7">
           <p className="eyebrow text-stone">Our Practice</p>
           <p className="mt-6 font-display text-3xl font-semibold leading-[1.08] tracking-tight text-ink sm:text-4xl md:text-[3.25rem]">

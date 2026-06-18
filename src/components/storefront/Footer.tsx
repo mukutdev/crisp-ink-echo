@@ -10,7 +10,7 @@ const groups = [
 export function Footer() {
   return (
     <footer className="bg-ink text-paper">
-      <div className="mx-auto max-w-[1400px] px-6 py-16 md:px-12 md:py-20">
+      <div className="px-6 py-16 md:px-12 md:py-20">
         <div className="grid grid-cols-2 gap-10 md:grid-cols-5">
           <div className="col-span-2">
             <img

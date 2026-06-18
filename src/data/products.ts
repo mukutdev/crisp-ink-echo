@@ -122,7 +122,7 @@ export const products: Product[] = [
     name: "Insulated Liner Vest",
     price: 195,
     category: "outerwear",
-    isNew: false,
+    isNew: true,
     tone: "oklch(0.7 0.004 90)",
     hoverTone: "oklch(0.45 0.004 90)",
     swatches: [

@@ -82,7 +82,7 @@ export const products: Product[] = [
     name: "Sealed Mac Coat",
     price: 510,
     category: "outerwear",
-    isNew: false,
+    isNew: true,
     tone: "oklch(0.5 0.004 90)",
     hoverTone: "oklch(0.72 0.004 90)",
     swatches: [

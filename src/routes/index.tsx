@@ -42,6 +42,7 @@ function Index() {
         <BestSellers />
         <CategoryTiles />
         <BrandStory />
+        <TeamGallery />
         <MarqueeRow />
         <Newsletter />
         <TrustBadges />

@@ -1,4 +1,5 @@
 import { Reveal } from "./Reveal";
+import storyImg from "@/assets/sections/story.jpg";
 
 export function BrandStory() {
   return (
@@ -11,7 +12,16 @@ export function BrandStory() {
             <br className="hidden md:block" /> long arc — pieces that
             outlast the season and earn their place.
           </p>
+          <div className="mt-10 overflow-hidden rounded-sm">
+            <img
+              src={storyImg}
+              alt="Technical garment detail with sealed seams"
+              loading="lazy"
+              className="aspect-[5/3] w-full object-cover"
+            />
+          </div>
         </Reveal>
+
 
         <Reveal className="self-end md:col-span-4 md:col-start-9" delay={120}>
           <p className="text-base leading-relaxed text-stone">

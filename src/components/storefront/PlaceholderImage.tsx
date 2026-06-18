@@ -13,7 +13,7 @@ interface PlaceholderImageProps {
 export function PlaceholderImage({ tone, className = "", label, zoom }: PlaceholderImageProps) {
   return (
     <div
-      className={`relative overflow-hidden ${className}`}
+      className={`overflow-hidden ${className.includes("absolute") ? "" : "relative"} ${className}`}
       style={{ backgroundColor: tone }}
       aria-hidden="true"
     >

@@ -73,9 +73,9 @@ function ProductPage() {
       <Navbar />
       <main>
         <ProductDetailView product={product} />
-        <FeatureHighlights product={product} />
-        <DesignPhilosophy />
+        <FeatureList product={product} />
         <ReviewsBlock />
+
       </main>
       <Footer />
     </CartProvider>

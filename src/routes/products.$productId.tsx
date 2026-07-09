@@ -12,7 +12,7 @@ import { CartProvider, useCart } from "@/context/CartContext";
 import { AnnouncementBar } from "@/components/storefront/AnnouncementBar";
 import { Navbar } from "@/components/storefront/Navbar";
 import { Footer } from "@/components/storefront/Footer";
-import { Reveal } from "@/components/storefront/Reveal";
+
 import { PlaceholderImage } from "@/components/storefront/PlaceholderImage";
 import {
   getProductById,

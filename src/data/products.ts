@@ -37,8 +37,8 @@ export interface ProductDetail {
   shippingNote: string;
   features: string[];
   specs: string[];
-  /** feature detail rows shown further down the page */
-  highlights: { label: string; title: string; copy: string }[];
+  /** feature detail rows shown as an expandable list */
+  featureRows: { label: string; title: string; copy: string }[];
 }
 
 const categoryLabel: Record<Category, string> = {
@@ -71,10 +71,10 @@ export function getProductDetail(product: Product): ProductDetail {
       product.swatches.map((s) => s.name).join(", "),
       `${categoryLabel[product.category]} · Engineered in a monochrome palette`,
     ],
-    highlights: [
+    featureRows: [
       {
-        label: "Considered weight",
-        title: "Lightweight Build",
+        label: "115gsm fabric",
+        title: "Ultra-Lightweight",
         copy: "A barely-there weight that disappears the moment you put it on, without sacrificing structure.",
       },
       {
@@ -83,9 +83,19 @@ export function getProductDetail(product: Product): ProductDetail {
         copy: "A resilient construction that moves in every direction through the full range of motion, never restrictive.",
       },
       {
-        label: "All-day comfort",
-        title: "Built to Last",
-        copy: "Finished to survive real use — abrasion-resistant, easy to care for, and designed to outlast the season.",
+        label: "Italian knit",
+        title: "Cool-to-Touch",
+        copy: "A cool-hand technical knit that pulls heat and moisture away from the skin and dries fast.",
+      },
+      {
+        label: "Laser-cut",
+        title: "Body-Mapped Ventilation",
+        copy: "Ventilation placed exactly where the body runs hottest, with the densest perforations down the back.",
+      },
+      {
+        label: "Low-light details",
+        title: "Reflective Branding",
+        copy: "Quiet logo detailing that catches light in low-visibility conditions.",
       },
     ],
   };

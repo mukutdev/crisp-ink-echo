@@ -19,12 +19,14 @@ export function ProductCard({ product }: { product: Product }) {
 
   return (
     <article className="group">
+      <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-muted">
       <Link
         to="/products/$productId"
         params={{ productId: product.id }}
         aria-label={`View ${product.name}`}
-        className="relative block aspect-[3/4] overflow-hidden rounded-sm bg-muted"
+        className="absolute inset-0 block"
       >
+
         {image ? (
           <img
             src={image}

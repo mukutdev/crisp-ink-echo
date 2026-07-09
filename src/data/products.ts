@@ -28,6 +28,73 @@ export interface Product {
   swatches: Swatch[];
 }
 
+export const SIZES = ["S", "M", "L", "XL"] as const;
+export type Size = (typeof SIZES)[number];
+
+export interface ProductDetail {
+  tagline: string;
+  paragraphs: string[];
+  shippingNote: string;
+  features: string[];
+  specs: string[];
+  /** feature detail rows shown further down the page */
+  highlights: { label: string; title: string; copy: string }[];
+}
+
+const categoryLabel: Record<Category, string> = {
+  tops: "Top",
+  bottoms: "Bottom",
+  outerwear: "Outerwear",
+};
+
+/**
+ * Builds long-form PDP content for a product from its base attributes so
+ * every product resolves a full detail page without hand-authoring each one.
+ */
+export function getProductDetail(product: Product): ProductDetail {
+  return {
+    tagline: `The ${product.name}, engineered for movement and built to outlast the season.`,
+    paragraphs: [
+      `The ${product.name} is cut from a considered, technical fabric and finished with a clean monochrome hand. Every panel is placed to reduce bulk and let the piece move with you, whether you're commuting through weather or covering ground on foot.`,
+      `Details are deliberate: matte hardware, bonded seams, and a quiet Deepstrike mark. Nothing decorative — only what earns its place. Built to enable you to go further.`,
+    ],
+    shippingNote: "Orders ship within 2 business days.",
+    features: [
+      "Weather-resistant technical shell",
+      "Articulated, movement-mapped panels",
+      "Bonded, low-bulk seams",
+      "Matte corrosion-resistant hardware",
+      "Reflective Deepstrike branding",
+    ],
+    specs: [
+      `Sizes ${SIZES[0]}–${SIZES[SIZES.length - 1]}`,
+      product.swatches.map((s) => s.name).join(", "),
+      `${categoryLabel[product.category]} · Engineered in a monochrome palette`,
+    ],
+    highlights: [
+      {
+        label: "Considered weight",
+        title: "Lightweight Build",
+        copy: "A barely-there weight that disappears the moment you put it on, without sacrificing structure.",
+      },
+      {
+        label: "Moves with you",
+        title: "Four-Way Stretch",
+        copy: "A resilient construction that moves in every direction through the full range of motion, never restrictive.",
+      },
+      {
+        label: "All-day comfort",
+        title: "Built to Last",
+        copy: "Finished to survive real use — abrasion-resistant, easy to care for, and designed to outlast the season.",
+      },
+    ],
+  };
+}
+
+export function getProductById(id: string): Product | undefined {
+  return products.find((p) => p.id === id);
+}
+
 const productImages: Record<string, string> = {
   p1, p2, p3, p4, p5, p6, p7, p8,
 };

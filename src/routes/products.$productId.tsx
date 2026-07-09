@@ -407,7 +407,7 @@ function FeatureList({ product }: { product: Product }) {
 }
 
 const editorialItems = [
-  { src: editorial1, caption: "A highly ventilated running tee", span: "sm:col-span-2" },
+  { src: editorial1, caption: "A highly ventilated running tee", span: "aspect-[16/11] sm:col-span-2 sm:aspect-auto sm:h-full" },
   { src: editorial2, caption: "Body-mapped perforation", span: "" },
   { src: editorial3, caption: "All-day comfort", span: "" },
 ];

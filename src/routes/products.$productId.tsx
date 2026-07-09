@@ -406,6 +406,44 @@ function FeatureList({ product }: { product: Product }) {
   );
 }
 
+const editorialItems = [
+  { src: editorial1, caption: "A highly ventilated running tee", span: "sm:col-span-2" },
+  { src: editorial2, caption: "Body-mapped perforation", span: "" },
+  { src: editorial3, caption: "All-day comfort", span: "" },
+];
+
+function EditorialGallery() {
+  return (
+    <section className="px-6 pb-4 md:px-12">
+      <div className="grid grid-cols-1 gap-3 sm:grid-cols-4">
+        {editorialItems.map((item) => (
+          <figure
+            key={item.caption}
+            className={`relative overflow-hidden rounded-sm bg-muted ${item.span}`}
+          >
+            <img
+              src={item.src}
+              alt={item.caption}
+              loading="lazy"
+              width={1008}
+              height={1200}
+              className={`w-full object-cover transition-transform duration-700 hover:scale-[1.03] ${
+                item.span ? "aspect-[16/10] sm:aspect-auto sm:h-full" : "aspect-[3/4]"
+              }`}
+            />
+            <figcaption className="absolute left-4 top-4 eyebrow text-[0.65rem] text-paper mix-blend-difference">
+              {item.caption}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+  );
+}
+
+
+
+
 
 function ReviewsBlock() {
   return (

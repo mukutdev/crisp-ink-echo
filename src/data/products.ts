@@ -37,8 +37,8 @@ export interface ProductDetail {
   shippingNote: string;
   features: string[];
   specs: string[];
-  /** feature detail rows shown further down the page */
-  highlights: { label: string; title: string; copy: string }[];
+  /** feature detail rows shown as an expandable list */
+  featureRows: { label: string; title: string; copy: string }[];
 }
 
 const categoryLabel: Record<Category, string> = {

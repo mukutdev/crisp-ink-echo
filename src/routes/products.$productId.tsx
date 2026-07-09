@@ -14,6 +14,9 @@ import { Navbar } from "@/components/storefront/Navbar";
 import { Footer } from "@/components/storefront/Footer";
 
 import { PlaceholderImage } from "@/components/storefront/PlaceholderImage";
+import editorial1 from "@/assets/sections/pdp-editorial-1.jpg";
+import editorial2 from "@/assets/sections/pdp-editorial-2.jpg";
+import editorial3 from "@/assets/sections/pdp-editorial-3.jpg";
 import {
   getProductById,
   getProductDetail,
@@ -74,7 +77,9 @@ function ProductPage() {
       <main>
         <ProductDetailView product={product} />
         <FeatureList product={product} />
+        <EditorialGallery />
         <ReviewsBlock />
+
 
       </main>
       <Footer />
@@ -400,6 +405,45 @@ function FeatureList({ product }: { product: Product }) {
     </section>
   );
 }
+
+const editorialItems = [
+  { src: editorial1, caption: "A highly ventilated running tee", span: "aspect-[16/11] sm:col-span-2 sm:aspect-auto sm:h-full" },
+  { src: editorial2, caption: "Body-mapped perforation", span: "" },
+  { src: editorial3, caption: "All-day comfort", span: "" },
+];
+
+function EditorialGallery() {
+  return (
+    <section className="px-6 pb-4 md:px-12">
+      <div className="grid grid-cols-1 gap-3 sm:h-[34rem] sm:grid-cols-4 lg:h-[42rem]">
+        {editorialItems.map((item) => (
+          <figure
+            key={item.caption}
+            className={`group relative overflow-hidden rounded-sm bg-muted ${
+              item.span || "aspect-[3/4] sm:aspect-auto sm:h-full"
+            }`}
+          >
+            <img
+              src={item.src}
+              alt={item.caption}
+              loading="lazy"
+              width={1008}
+              height={1200}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+            />
+            <figcaption className="absolute left-4 top-4 z-10 eyebrow text-[0.65rem] text-paper mix-blend-difference">
+              {item.caption}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    </section>
+
+  );
+}
+
+
+
 
 
 function ReviewsBlock() {

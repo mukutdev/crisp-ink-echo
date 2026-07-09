@@ -415,12 +415,12 @@ const editorialItems = [
 function EditorialGallery() {
   return (
     <section className="px-6 pb-4 md:px-12">
-      <div className="grid grid-cols-1 gap-3 sm:grid-cols-4">
+      <div className="grid grid-cols-1 gap-3 sm:h-[34rem] sm:grid-cols-4 lg:h-[42rem]">
         {editorialItems.map((item) => (
           <figure
             key={item.caption}
             className={`group relative overflow-hidden rounded-sm bg-muted ${
-              item.span || "aspect-[3/4] sm:aspect-auto"
+              item.span || "aspect-[3/4] sm:aspect-auto sm:h-full"
             }`}
           >
             <img
@@ -429,20 +429,16 @@ function EditorialGallery() {
               loading="lazy"
               width={1008}
               height={1200}
-              className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${
-                item.span
-                  ? "aspect-[16/10] sm:aspect-auto sm:h-full"
-                  : "absolute inset-0 h-full sm:static"
-              }`}
+              className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
             />
             <figcaption className="absolute left-4 top-4 z-10 eyebrow text-[0.65rem] text-paper mix-blend-difference">
               {item.caption}
             </figcaption>
           </figure>
-
         ))}
       </div>
     </section>
+
   );
 }
 

@@ -77,7 +77,9 @@ function ProductPage() {
       <main>
         <ProductDetailView product={product} />
         <FeatureList product={product} />
+        <EditorialGallery />
         <ReviewsBlock />
+
 
       </main>
       <Footer />

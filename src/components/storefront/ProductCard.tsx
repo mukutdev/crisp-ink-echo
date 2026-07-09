@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Plus, Check } from "lucide-react";
 import { type Product, getProductImage } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { PlaceholderImage } from "./PlaceholderImage";
+
 
 export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();
@@ -18,6 +20,13 @@ export function ProductCard({ product }: { product: Product }) {
   return (
     <article className="group">
       <div className="relative aspect-[3/4] overflow-hidden rounded-sm bg-muted">
+      <Link
+        to="/products/$productId"
+        params={{ productId: product.id }}
+        aria-label={`View ${product.name}`}
+        className="absolute inset-0 block"
+      >
+
         {image ? (
           <img
             src={image}
@@ -41,6 +50,10 @@ export function ProductCard({ product }: { product: Product }) {
             New
           </span>
         )}
+      </Link>
+
+
+
 
         <button
           type="button"

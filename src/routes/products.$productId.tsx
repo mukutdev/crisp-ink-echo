@@ -349,53 +349,58 @@ function Accordion({ title, children }: { title: string; children: React.ReactNo
   );
 }
 
-function FeatureHighlights({ product }: { product: Product }) {
+function FeatureList({ product }: { product: Product }) {
   const detail = getProductDetail(product);
+  const [open, setOpen] = useState<number | null>(null);
+
   return (
-    <section className="px-6 py-20 md:px-12 md:py-28">
-      <div className="space-y-16 md:space-y-28">
-        {detail.highlights.map((h, i) => (
-          <Reveal
-            key={h.title}
-            className={`grid grid-cols-1 items-center gap-8 md:grid-cols-2 md:gap-14 ${
-              i % 2 === 1 ? "md:[&>*:first-child]:order-2" : ""
-            }`}
-          >
-            <div className="aspect-[4/3] overflow-hidden rounded-sm">
-              <PlaceholderImage
-                tone={i % 2 === 0 ? product.tone : product.hoverTone}
-                label={h.label}
-                className="h-full w-full"
-              />
-            </div>
-            <div>
-              <p className="eyebrow text-stone">{h.label}</p>
-              <h3 className="mt-3 font-display text-3xl font-semibold tracking-tight text-ink md:text-4xl">
-                {h.title}
-              </h3>
-              <p className="mt-4 max-w-md text-sm leading-relaxed text-stone">{h.copy}</p>
-            </div>
-          </Reveal>
-        ))}
-      </div>
+    <section className="px-6 py-16 md:px-12 md:py-24">
+      <ul className="border-t border-ink/80">
+        {detail.featureRows.map((row, i) => {
+          const isOpen = open === i;
+          return (
+            <li key={row.title} className="border-b border-ink/80">
+              <button
+                type="button"
+                onClick={() => setOpen(isOpen ? null : i)}
+                aria-expanded={isOpen}
+                className="grid w-full grid-cols-[minmax(7rem,10rem)_1fr_auto] items-center gap-4 py-6 text-left transition-opacity hover:opacity-70 md:gap-8 md:py-8"
+              >
+                <span className="eyebrow text-[0.65rem] text-ink md:text-[0.7rem]">
+                  {row.label}
+                </span>
+                <span className="font-display text-2xl font-semibold tracking-tight text-ink sm:text-3xl md:text-4xl">
+                  {row.title}
+                </span>
+                <Plus
+                  className={`h-6 w-6 shrink-0 text-ink transition-transform duration-300 md:h-7 md:w-7 ${
+                    isOpen ? "rotate-45" : ""
+                  }`}
+                  strokeWidth={1.25}
+                />
+              </button>
+              <div
+                className={`grid transition-all duration-300 ease-out ${
+                  isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"
+                }`}
+              >
+                <div className="overflow-hidden">
+                  <p className="grid grid-cols-[minmax(7rem,10rem)_1fr] gap-4 pb-8 md:gap-8">
+                    <span aria-hidden="true" />
+                    <span className="max-w-xl text-sm leading-relaxed text-stone">
+                      {row.copy}
+                    </span>
+                  </p>
+                </div>
+              </div>
+            </li>
+          );
+        })}
+      </ul>
     </section>
   );
 }
 
-function DesignPhilosophy() {
-  return (
-    <section className="bg-ink px-6 py-24 text-paper md:px-12 md:py-32">
-      <Reveal className="mx-auto max-w-3xl text-center">
-        <p className="eyebrow text-paper/50">Design Philosophy</p>
-        <p className="mt-6 font-display text-2xl font-medium leading-snug tracking-tight text-paper md:text-3xl">
-          Deepstrike builds light, considered equipment for demanding conditions. The best gear
-          isn't defined by any single variable — it's the balance of form, weight, durability, and
-          function, engineered to solve real problems.
-        </p>
-      </Reveal>
-    </section>
-  );
-}
 
 function ReviewsBlock() {
   return (

@@ -14,6 +14,9 @@ import { Navbar } from "@/components/storefront/Navbar";
 import { Footer } from "@/components/storefront/Footer";
 
 import { PlaceholderImage } from "@/components/storefront/PlaceholderImage";
+import editorial1 from "@/assets/sections/pdp-editorial-1.jpg";
+import editorial2 from "@/assets/sections/pdp-editorial-2.jpg";
+import editorial3 from "@/assets/sections/pdp-editorial-3.jpg";
 import {
   getProductById,
   getProductDetail,

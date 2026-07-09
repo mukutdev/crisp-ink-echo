@@ -419,7 +419,9 @@ function EditorialGallery() {
         {editorialItems.map((item) => (
           <figure
             key={item.caption}
-            className={`relative overflow-hidden rounded-sm bg-muted ${item.span}`}
+            className={`group relative overflow-hidden rounded-sm bg-muted ${
+              item.span || "aspect-[3/4] sm:aspect-auto"
+            }`}
           >
             <img
               src={item.src}
@@ -427,15 +429,17 @@ function EditorialGallery() {
               loading="lazy"
               width={1008}
               height={1200}
-              className={`h-full w-full object-cover transition-transform duration-700 hover:scale-[1.03] ${
-                item.span ? "aspect-[16/10] sm:aspect-auto" : "aspect-[3/4] sm:aspect-auto"
+              className={`w-full object-cover transition-transform duration-700 group-hover:scale-[1.03] ${
+                item.span
+                  ? "aspect-[16/10] sm:aspect-auto sm:h-full"
+                  : "absolute inset-0 h-full sm:static"
               }`}
-
             />
-            <figcaption className="absolute left-4 top-4 eyebrow text-[0.65rem] text-paper mix-blend-difference">
+            <figcaption className="absolute left-4 top-4 z-10 eyebrow text-[0.65rem] text-paper mix-blend-difference">
               {item.caption}
             </figcaption>
           </figure>
+
         ))}
       </div>
     </section>

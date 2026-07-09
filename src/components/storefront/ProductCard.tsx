@@ -1,8 +1,10 @@
 import { useState } from "react";
+import { Link } from "@tanstack/react-router";
 import { Plus, Check } from "lucide-react";
 import { type Product, getProductImage } from "@/data/products";
 import { useCart } from "@/context/CartContext";
 import { PlaceholderImage } from "./PlaceholderImage";
+
 
 export function ProductCard({ product }: { product: Product }) {
   const { addItem } = useCart();

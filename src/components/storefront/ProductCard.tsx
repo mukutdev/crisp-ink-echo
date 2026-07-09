@@ -50,6 +50,9 @@ export function ProductCard({ product }: { product: Product }) {
             New
           </span>
         )}
+      </Link>
+
+
 
 
         <button

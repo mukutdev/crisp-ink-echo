@@ -73,7 +73,7 @@ function ProductPage() {
   return (
     <CartProvider>
       <AnnouncementBar />
-      <Navbar />
+      <Navbar solid />
       <main>
         <ProductDetailView product={product} />
         <FeatureList product={product} />

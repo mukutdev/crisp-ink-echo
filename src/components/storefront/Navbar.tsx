@@ -7,17 +7,19 @@ import logoLight from "@/assets/logo.avif.asset.json";
 
 const links = ["New In", "Women", "Men", "Outerwear", "About"];
 
-export function Navbar() {
+export function Navbar({ solid = false }: { solid?: boolean }) {
   const { count } = useCart();
-  const [scrolled, setScrolled] = useState(false);
+  const [scrolledState, setScrolled] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
+  const scrolled = solid || scrolledState;
 
   useEffect(() => {
+    if (solid) return;
     const onScroll = () => setScrolled(window.scrollY > 24);
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
-  }, []);
+  }, [solid]);
 
   return (
     <header
